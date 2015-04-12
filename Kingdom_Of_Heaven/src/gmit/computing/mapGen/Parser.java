@@ -82,7 +82,6 @@ public class Parser extends DefaultHandler{
 	 */
 	public void characters(char[] ch,int start, int length) throws SAXException{
 		if (description){
-			
 			String locationDesc = new String(ch, start, length);
 			loc.setDescriprion(new String(ch, start, length));
 			//System.out.println(locationDesc);
@@ -149,7 +148,7 @@ public class Parser extends DefaultHandler{
 			try{
 				String itemName = atts.getValue("name");
 				String itemType = atts.getValue("type");
-				int itemStrenght = Integer.parseInt(atts.getValue("stenght"));
+				int itemStrenght = Integer.parseInt(atts.getValue("strength"));
 				it =  (Items) Class.forName(itemType).newInstance();
 				it.setType(itemType);
 				it.setName(itemName);
@@ -220,7 +219,7 @@ public class Parser extends DefaultHandler{
 				String charName = atts.getValue("name");
 				String charType = atts.getValue("type");
 				String charDesc = atts.getValue("descriptiontype");
-				String charDamage = atts.getValue("descriptiontype");
+				String charDamage = atts.getValue("strength");
 				float health = Float.parseFloat(atts.getValue("health"));
 			
 				//private map location integer -> exit list 

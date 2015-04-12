@@ -88,7 +88,7 @@ public class Runner extends Applet{
 		}
 		System.out.println("--------------------");
 		
-
+		
 		for(Location loc : gm.getLocation()){
 			if(loc.getName().equalsIgnoreCase("Antioch")){
 				myHero.setLocation(loc);

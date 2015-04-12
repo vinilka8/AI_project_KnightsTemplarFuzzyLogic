@@ -30,8 +30,8 @@ FUNCTION_BLOCK risks
 	END_DEFUZZIFY
 		
 	RULEBLOCK No1
-		AND : MIN; //min for and
-		ACT : MIN; //
+		AND : MIN;
+		ACT : MIN;
 		ACCU : MAX;
 		RULE 1 : IF weapon IS strong AND enemy IS weak THEN victory IS hight;
 		RULE 2 : IF weapon IS weak AND enemy IS strong THEN victory IS low; 

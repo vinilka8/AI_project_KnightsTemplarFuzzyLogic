@@ -2,6 +2,7 @@ package gmit.computing.mapGen;
 import gmit.computing.people.EnemyCharacters;
 import gmit.computing.people.FriendlyCharacters;
 import gmit.computing.people.GameCharacter;
+import gmit.computing.people.MyHero;
 import gmit.computing.people.NeutralCharacters;
 import gmit.computing.things.Items;
 
@@ -28,6 +29,17 @@ public class Location implements Lookable{
 		}
 		return null;
 	}
+	
+	public MyHero getMyHero(String myhero){
+		for(GameCharacter g : observers){
+			if(g.getClass() == gmit.computing.people.EnemyCharacters.class & g.getName().equalsIgnoreCase(myhero)){
+				return (MyHero) g;
+			}
+		}
+		return null;
+	}
+	
+	
 	
 	public FriendlyCharacters getFriend(String friendname){
 		for(GameCharacter g : observers){

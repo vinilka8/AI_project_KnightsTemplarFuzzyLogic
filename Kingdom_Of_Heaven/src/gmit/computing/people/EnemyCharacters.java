@@ -6,10 +6,12 @@ import gmit.computing.things.Weapon;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.sourceforge.jFuzzyLogic.FIS;
+
 
 public class EnemyCharacters implements GameCharacter{
 	private int Strenght;
-	private Location locaton;
+	private Location location;
 	private String direction;
 	private String name;
 	private float Health;
@@ -17,6 +19,23 @@ public class EnemyCharacters implements GameCharacter{
 	private float lifeForce = 100.00f;
 	private List<Items> items = new ArrayList<Items>();
 	//life force here
+	public EnemyCharacters() {
+		super();
+		loadFuzzyFile();
+	}
+
+	FIS fis;
+
+	public void loadFuzzyFile() {
+		String fileName = "conf/rules.fcl";// contains all fuzzy sets
+		fis = FIS.load(fileName, true); // Load and parse the FCL
+		// Error while loading?
+		if (fis == null) {
+			System.err.println("Can't load file: '" + fileName + "'");
+			return;
+		}
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -112,11 +131,6 @@ public class EnemyCharacters implements GameCharacter{
 		
 	}
 
-	@Override
-	public double getStrength() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public void fight(Weapon weapon, EnemyCharacters ec) {
@@ -133,10 +147,10 @@ public class EnemyCharacters implements GameCharacter{
 	@Override
 	public void setCharacterLocation(Location location) {
 		// TODO Auto-generated method stub
-		this.locaton = location;
+		this.location = location;
 	}
 	public Location getLocation(){
-		return locaton;
+		return location;
 		
 	}
 
@@ -145,4 +159,59 @@ public class EnemyCharacters implements GameCharacter{
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public int getStrength() {
+		// TODO Auto-generated method stub
+		return Strenght;
+		
+	}
+	@Override
+	public void setStrength(int strength) {
+		// TODO Auto-generated method stub
+		this.Strenght = strength;
+	}
+
+	@Override
+	public void fight(Weapon weapon, MyHero mh) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	/*static boolean a = false;
+	public void asd(){
+		while(!a){
+			for(GameCharacter l : location.getObservers()){
+				System.out.println("i ma here" + l.getName());
+				if(location.getObservers() != null){
+					
+				}
+			}
+		}
+		//serach a pleayr in observes in location
+		//when you find him, get wapon .get 0  and pass it to fight (weapon and my hero)
+	}*/
+	/*
+	@Override
+	public void fight(Weapon weapon, MyHero mh) {
+		// TODO Auto-generated method stub
+		fis.setVariable("weapon", weapon.getStrennght());// weapon.getDamage()
+		fis.setVariable("enemy", mh.getHp());// ec.getStrength()
+		fis.evaluate();
+		float victory = (float) fis.getVariable("victory").getValue();
+		System.out.println("Enemy Health " + mh.getHp() +" HP");
+		//MyHero me = location.getMyHero(mh);
+		if (mh != null){
+			while(mh.getHp() > 0) {
+				mh.setHp((mh.getHp() - weapon.getStrennght()));// or Health is public
+				if (mh.getHp() < 0) {
+	
+					location.getObservers().remove(mh);
+				}
+				System.out.println("You hit Enemy with " + weapon.getStrennght() + " : New Enemy health :" + mh.getHp() + "HP");
+				System.out.println();
+			}
+		}
+		System.out.println(victory + "----- VICTORY !!! ----- ");
+		
+	}*/
 }

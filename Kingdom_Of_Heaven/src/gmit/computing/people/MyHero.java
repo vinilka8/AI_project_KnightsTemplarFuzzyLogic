@@ -5,6 +5,7 @@ import gmit.computing.mapGen.InputClass;
 import gmit.computing.mapGen.Location;
 import gmit.computing.things.Consumable;
 import gmit.computing.things.Items;
+import gmit.computing.things.QuestItem;
 import gmit.computing.things.Weapon;
 
 import java.util.ArrayList;
@@ -18,8 +19,9 @@ import net.sourceforge.jFuzzyLogic.FIS;
 
 public class MyHero implements GameCharacter {
 	private String name;
-	private static double hp = 50;
+	private float hp = 50;
 	private Location location;
+	private int Strenght;
 	private String descriptionchar;
 	private List<Items> items = new ArrayList<Items>();
 	private List<GameCharacter> gc = new ArrayList<GameCharacter>();
@@ -69,12 +71,12 @@ public class MyHero implements GameCharacter {
 		this.items = itemsos;
 	}
 
-	public double getHp() {
+	public float getHp() {
 		return hp;
 
 	}
 
-	public void setHp(double hp) {
+	public void setHp(float hp) {
 		this.hp = hp;
 
 	}
@@ -86,7 +88,7 @@ public class MyHero implements GameCharacter {
 			// System.out.println(" from for " + itemsos);
 			if (i.getName().equalsIgnoreCase(itemsos))// otherwise use item
 			{
-				System.out.println("You choose to take a " + i.getName());
+				System.out.println("You choose to take a " + i.getName() + " - with the strengh - " + i.getStrennght());
 				items.add(i);
 				location.getItems().remove(i);
 				System.out.println("The " + i.getName() + " is in your bag");
@@ -101,7 +103,7 @@ public class MyHero implements GameCharacter {
 		for (Items u : items) {
 			if (u.getName().equalsIgnoreCase(itemsos)) {
 				if (hp < 100) {
-					//if(itemsos == Consumable.class.getName()){
+					if(u.getClass() == Consumable.class){
 					//if (u.getName() == Consumable.class.getName()) {
 						System.out.println("Your current heath is " + hp
 								+ " HP");
@@ -113,12 +115,11 @@ public class MyHero implements GameCharacter {
 								+ " HP" + "\nYour health now is : " + hp
 								+ " HP");
 					
-//					} else {
-//						System.out.println("Wrong item to use");
-//					}
+					} else {
+						System.out.println("Wrong item to use");
+					}
 				} else {
-					System.out
-							.println("Your healt is full and you cannot use it");
+					System.out.println("Your healt is full and you cannot use it");
 				}
 				break;
 			}
@@ -212,18 +213,17 @@ public class MyHero implements GameCharacter {
 		fis.setVariable("enemy", ec.getHealth());// ec.getStrength()
 		fis.evaluate();
 		float victory = (float) fis.getVariable("victory").getValue();
-		System.out.println(victory + "----- VICTORY !!! ----- ");
-		
-		System.out.println("Enemy Health " + ec.getHealth() +"HP");
-		ec.setHealth((ec.getHealth() - victory));// or Health is public
-		if (ec.getHealth() < 0) {
+		System.out.println("Enemy Health " + ec.getHealth() +" HP");
+		while(ec.getHealth() > 0) {
+			ec.setHealth((ec.getHealth() - weapon.getStrennght()));// or Health is public
+			if (ec.getHealth() < 0) {
 
-			location.getObservers().remove(ec);
+				location.getObservers().remove(ec);
+			}
+			System.out.println("You hit Enemy with " + weapon.getStrennght() + " : New Enemy health :" + ec.getHealth() + "HP");
+			System.out.println();
 		}
-		System.out.println("You hit Enemy with " + weapon.getStrennght());
-		System.out.println("New Enemy health " + ec.getHealth());
-	
-		
+		System.out.println(victory + "----- VICTORY !!! ----- ");
 	}
 
 	@Override
@@ -247,10 +247,13 @@ public class MyHero implements GameCharacter {
 						+ location.getName());
 				System.out.println("About this town :\t"
 						+ location.getDescription());
-
-				// neeeeed to fix it
-
 				System.out.println("Characters in this location :\t");
+				
+				
+				
+				if(loc.getName().equalsIgnoreCase("Cyprus")){
+					win();
+				}
 				// String enemyName = InputClass.getInput();
 				// EnemyCharacters ec = location.getEnemy(enemyName);
 				// if(ec != null){
@@ -267,6 +270,18 @@ public class MyHero implements GameCharacter {
 		}
 		if (l.equals(location)) {
 			System.out.println("no location ther, just empty fields with sand");
+		}
+	}
+
+	private void win() {
+		// TODO Auto-generated method stub
+		for(Items i : items)
+		{
+			if(i.getName().equalsIgnoreCase("Holy Grail")){
+				System.out.println("_________Well Done_________");
+				System.out.println("________YOU COMPLETE_______");
+				System.out.println("__________The Game_________");
+			}
 		}
 	}
 
@@ -289,7 +304,7 @@ public class MyHero implements GameCharacter {
 		System.out.println("----------------------------------------");
 		System.out.println("Items are available in the location : ");
 		for (Items items : l.getItems()) {
-			System.out.println("\t\t\t" + items.getName());
+			System.out.println("\t\t\t" + items.getName() + " -->> " + items.getStrennght());
 		}
 	}
 
@@ -368,27 +383,12 @@ public class MyHero implements GameCharacter {
 			break;
 		case "tell":
 			System.out.println("Choose to who you want to tell");
-
 			String cho = InputClass.getInput();
 			FriendlyCharacters fc = location.getFriend(cho);
-			//NeutralCharacters nc = location.getNeutral(cho);
-//			if(cho == fc.getName().toString()){
-				System.out.println("what would you like to ask me?");// few out put
-				System.out.println("Power, Healt, About");// choose out put
-				//System.out.println(fc.getName());
-				//System.out.println(nc.getName());
-				String what = InputClass.getInput();
-				tell(what, fc);
-	//		}
-			
-			//String friendName = InputClass.getInput();
-			
-			//String neutralName = InputClass.getInput();
-			
-			
-
-			// String neutralName = InputClass.getInput();
-			// NeutralCharacters nc = location.getNeutral(neutralName);
+			System.out.println("what would you like to ask me?");// few out put
+			System.out.println("Power, Healt, About");// choose out put
+			String what = InputClass.getInput();
+			tell(what, fc);
 			break;
 		case "drop":
 			System.out.println("select item");
@@ -406,23 +406,24 @@ public class MyHero implements GameCharacter {
 			String enemyName = InputClass.getInput();
 			EnemyCharacters ec = location.getEnemy(enemyName);
 			if (ec != null) {
-				System.out.println("Choose weapon : ");
-				String weapon = InputClass.getInput();
-				Weapon w = (Weapon) useWeapon(weapon);
-				fight(w, ec);
+				//EnemyCharacters.a = true;
+				try{
+					System.out.println("Choose weapon : ");
+					String weapon = InputClass.getInput();
+					Weapon w = (Weapon) useWeapon(weapon);
+					fight(w, ec);
+				}catch (Exception e) {
+					System.out.println("please write correct weapon");
+					e.printStackTrace();
+				}
+				
 			} else {
 				System.out.println(" you can't fight your Friend and Neutral army ");
 			}
-
-			/*
-			 * System.out.println("what weapon you want to choose : "); String
-			 * weapon = InputClass.getInput(); //useWeapon(weapon);
-			 * System.out.println("weapon : "+ weapon + " power of :" +
-			 * getStrength());
-			 * System.out.println("who you would like to attack : "); String ec
-			 * = InputClass.getInput(); //choosingEnemy(ec);
-			 * fight(useWeapon(weapon), choosingEnemy(ec));
-			 */
+			break;
+		case "exit":
+			System.exit(0);
+			break;
 		default:
 			break;
 		}
@@ -431,9 +432,11 @@ public class MyHero implements GameCharacter {
 	@Override
 	public void itemInBag() {
 		// TODO Auto-generated method stub
+		System.out.println("---------------------");
 		for (Items items : items) {
-			System.out.println(items.getName());
+			System.out.println("-> " + items.getName() + " - with strenght - " + items.getStrennght());
 		}
+		System.out.println("---------------------");
 	}
 
 	@Override
@@ -449,14 +452,20 @@ public class MyHero implements GameCharacter {
 	}
 
 	@Override
-	public double getStrength() {
+	public int getStrength() {
 		// TODO Auto-generated method stub
-		return 0;
+		return Strenght;
+		
 	}
-
+	@Override
+	public void setStrength(int strength) {
+		// TODO Auto-generated method stub
+		this.Strenght = strength;
+	}
 	@Override
 	public void setHealth(float health) {
 		// TODO Auto-generated method stub
+		this.hp = health;
 
 	}
 
@@ -464,5 +473,11 @@ public class MyHero implements GameCharacter {
 	public void setCharacterLocation(Location location) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void fight(Weapon weapon, MyHero mh) {
+		// TODO Auto-generated method stub
+		
 	}
 }

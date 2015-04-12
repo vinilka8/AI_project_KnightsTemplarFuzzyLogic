@@ -134,11 +134,16 @@ public class FriendlyCharacters implements GameCharacter{
 		
 	}
 
-
 	@Override
-	public double getStrength() {
+	public int getStrength() {
 		// TODO Auto-generated method stub
-		return 0;
+		return Strenght;
+		
+	}
+	@Override
+	public void setStrength(int strength) {
+		// TODO Auto-generated method stub
+		this.Strenght = strength;
 	}
 
 	@Override
@@ -164,6 +169,12 @@ public class FriendlyCharacters implements GameCharacter{
 
 	public void setArmy(int army) {
 		this.Army = army;
+	}
+
+	@Override
+	public void fight(Weapon weapon, MyHero mh) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

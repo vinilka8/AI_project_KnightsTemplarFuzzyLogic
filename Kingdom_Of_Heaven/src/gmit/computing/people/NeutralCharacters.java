@@ -125,9 +125,15 @@ public class NeutralCharacters implements GameCharacter{
 	}
 
 	@Override
-	public double getStrength() {
+	public int getStrength() {
 		// TODO Auto-generated method stub
-		return 0;
+		return Strenght;
+		
+	}
+	@Override
+	public void setStrength(int strength) {
+		// TODO Auto-generated method stub
+		this.Strenght = strength;
 	}
 
 	@Override
@@ -153,6 +159,12 @@ public class NeutralCharacters implements GameCharacter{
 
 	@Override
 	public void tell(String temp, FriendlyCharacters fc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fight(Weapon weapon, MyHero mh) {
 		// TODO Auto-generated method stub
 		
 	}

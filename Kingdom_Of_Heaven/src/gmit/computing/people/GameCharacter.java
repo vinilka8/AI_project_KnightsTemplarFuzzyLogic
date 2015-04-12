@@ -30,7 +30,9 @@ public interface GameCharacter extends Runnable{
 	public void itemInBag();
 	
 	public void fight(Weapon weapon, EnemyCharacters ec);
-	public double getStrength();
+	public void fight(Weapon weapon, MyHero mh);
+	public int getStrength();
+	public void setStrength(int strength);
 	public void draw();
 	
 	public void look(Location l);

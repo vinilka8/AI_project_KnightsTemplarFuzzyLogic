@@ -11,17 +11,18 @@
 		<exit to="Alepo" weight="23" danger="10" difficult="9.6" direction="E"/>
 		<exit to="Damascus" weight="71" danger="45" difficult="9.6" direction="S"/>
 		
-		<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="15" />	
-		<item name="beer" type="gmit.computing.things.Consumable" stenght="15" />
+				
+		<item name="Holy Grail" type="gmit.computing.things.QuestItem" strength="20"/>	
+		<item name="Short Sword" type="gmit.computing.things.Weapon" strength="15" />	
+		<item name="beer" type="gmit.computing.things.Consumable" strength="15" />
 
 		<game-character name="Neutral people" descriptiontype="We are just normal people who want's only Peace in the world" type="gmit.computing.people.NeutralCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="60" />
+			<item name="Short Sword" type="gmit.computing.things.Weapon" strength="35" />
 		</game-character>
 		
 		<game-character name="Deadly Templar Knight" descriptiontype="We are Warriors and we are ready to kill every Enemy in this territory" type="gmit.computing.people.FriendlyCharacters" health="70">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Long Sword" type="gmit.computing.things.Items" stenght="35"/>
 		</game-character>
 	</location>
 	
@@ -35,18 +36,18 @@
 		<exit to="Antioch" weight="78" danger="55" difficult="9.6" direction="NE"/>
 		<exit to="PiratBuhtA" weight="27" danger="85" difficult="9.6" direction="E"/>
 		
-		<item name="Long Sword" type="gmit.computing.things.Weapon" stenght="35" />
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
-		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		<item name="Long Sword" type="gmit.computing.things.Weapon" strength="35" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" strength="15" />
 		
 		<game-character name="Neutral people" type="gmit.computing.people.NeutralCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="15" />
+			<item name="Short Sword" type="gmit.computing.things.Weapon" strength="15" />
 		</game-character>
 		
-		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99">
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99" strength="20">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Scimitar" type="gmit.computing.things.Items" stenght="60"/>
+			<item name="Scimitar" type="gmit.computing.things.Items" strength="60"/>
 		</game-character> 
 	</location>
 	
@@ -61,13 +62,13 @@
 		<exit to="Alepo" weight="28" danger="10" difficult="9.6" direction="WS"/>
 		<exit to="Mosul" weight="37" danger="13" difficult="9.6" direction="E"/>
 		
-		<item name="Mace" type="gmit.computing.things.Weapon" stenght="45" />
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
-		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		<item name="Mace" type="gmit.computing.things.Weapon" strength="45" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" strength="15" />
 		
 		<game-character name="Neutral people" type="gmit.computing.people.NeutralCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="15" />
+			<item name="Short Sword" type="gmit.computing.things.Weapon" strength="15" />
 		</game-character>
 	</location>
 	
@@ -82,17 +83,17 @@
 		<exit to="Edessa" weight="28" danger="10" difficult="9.6" direction="NE"/>
 		<exit to="Damascus" weight="64" danger="40" difficult="9.6" direction="S"/>
 		
-		<item name="Crossbow" type="gmit.computing.things.Weapon" stenght="50" />
-		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		<item name="Crossbow" type="gmit.computing.things.Weapon" strength="50" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" strength="15" />
 		
 		<game-character name="Neutral people" type="gmit.computing.people.NeutralCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="15" />
+			<item name="Short Sword" type="gmit.computing.things.Weapon" strength="15" />
 		</game-character>
 		
 		<game-character name="Deadly Templar Knight" type="gmit.computing.people.FriendlyCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Long Sword" type="gmit.computing.things.Items" stenght="35"/>
+			<item name="Long Sword" type="gmit.computing.things.Items" strength="35"/>
 		</game-character>
 	</location>
 	
@@ -106,8 +107,8 @@
 		<exit to="Edessa" weight="37" danger="13" difficult="9.6" direction="W"/>
 		<exit to="Damascus" weight="74" danger="67" difficult="9.6" direction="WS"/>
 		
-		<item name="Halberd" type="gmit.computing.things.Weapon" stenght="75" />
-		<item name="Henessy" type="gmit.computing.things.Consumable" stenght="20" />
+		<item name="Halberd" type="gmit.computing.things.Weapon" strength="75" />
+		<item name="Henessy" type="gmit.computing.things.Consumable" strength="20" />
 	</location>
 	
 	<location id="6" name="Damascus">
@@ -122,10 +123,10 @@
 		<exit to="Tiberias" weight="20" danger="36" difficult="9.6" direction="WS"/>
 		<exit to="Mosul" weight="74" danger="67" difficult="9.6" direction="NE"/>
 		
-		<item name="Henessy" type="gmit.computing.things.Consumable" stenght="20" />
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
-		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
-		<item name="Scimitar" type="gmit.computing.things.Consumable" stenght="60" />
+		<item name="Henessy" type="gmit.computing.things.Consumable" strength="20" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" strength="15" />
+		<item name="Scimitar" type="gmit.computing.things.Consumable" strength="60" />
 		
 	</location>
 	
@@ -140,13 +141,13 @@
 		<exit to="Damascus" weight="20" danger="36" difficult="9.6" direction="NE"/>
 		<exit to="Acre" weight="15" danger="41" difficult="9.6" direction="S"/>
 		
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
-		<item name="bow" type="gmit.computing.things.Weapon" stenght="55" />
-		<item name="Dragon Fire" type="gmit.computing.things.Weapon" stenght="85" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
+		<item name="bow" type="gmit.computing.things.Weapon" strength="55" />
+		<item name="Dragon Fire" type="gmit.computing.things.Weapon" strength="85" />
 		
 		<game-character name="Deadly Templar Knight" type="gmit.computing.people.FriendlyCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Long Sword" type="gmit.computing.things.Items" stenght="35"/>
+			<item name="Long Sword" type="gmit.computing.things.Items" strength="35"/>
 		</game-character>
 	</location>
 	
@@ -163,11 +164,11 @@
 		<exit to="Tiberias" weight="15" danger="41" difficult="9.6" direction="N"/>
 		<exit to="Haifa" weight="18" danger="37" difficult="9.6" direction="S"/>
 	
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
 		
 		<game-character name="Deadly Templar Knight" type="gmit.computing.people.FriendlyCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Long Sword" type="gmit.computing.things.Items" stenght="35"/>
+			<item name="Long Sword" type="gmit.computing.things.Items" strength="35"/>
 		</game-character>
 	</location>
 	
@@ -182,8 +183,8 @@
 		<exit to="Acre" weight="18" danger="37" difficult="9.6" direction="N"/>
 		<exit to="Jerusalem" weight="24" danger="87" difficult="9.6" direction="SE"/>
 		
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
-		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" strength="15" />
 	</location>
 	
 	<location id="10" name="Jerusalem">
@@ -198,16 +199,15 @@
 		
 		<exit to="Haifa" weight="24" danger="87" difficult="9.6" direction="NW"/>
 		<exit to="Cairo" weight="69" danger="79" difficult="9.6" direction="W"/>
+
 		
-		<item name="Holy Grail" type="gmit.computing.things.QuestItem" stenght="20"/>	
-		
-		<item name="Henessy" type="gmit.computing.things.Consumable" stenght="20" />
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
-		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		<item name="Henessy" type="gmit.computing.things.Consumable" strength="20" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" strength="15" />
 		
 		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Scimitar" type="gmit.computing.things.Items" stenght="60"/>
+			<item name="Scimitar" type="gmit.computing.things.Items" strength="60"/>
 		</game-character> 
 	</location>
 	
@@ -221,8 +221,8 @@
 		<exit to="PiratBuhtB" weight="62" danger="85" difficult="9.6" direction="NE"/>
 		<exit to="Jerusalem" weight="69" danger="79" difficult="9.6" direction="E"/>
 		
-		<item name="Flower of Peace" type="gmit.computing.things.Weapon" stenght="100" />
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="Flower of Peace" type="gmit.computing.things.Weapon" strength="100" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
 	</location>
 	
 	<location id="12" name="PiratBuhtA">
@@ -236,8 +236,13 @@
 		<exit to="PiratBuhtB" weight="47" danger="85" difficult="9.6" direction="S"/>
 		<exit to="Cyprus" weight="27" danger="85" difficult="9.6" direction="E"/>
 		
-		<item name="Rom" type="gmit.computing.things.Consumable" stenght="40" />
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="Rom" type="gmit.computing.things.Consumable" strength="40" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
+		
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="70" strength="30">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Scimitar" type="gmit.computing.things.Items" strength="60"/>
+		</game-character> 
 	</location>
 	
 	<location id="13" name="PiratBuhtB">
@@ -251,12 +256,12 @@
 		<exit to="PiratBuhtA" weight="47" danger="85" difficult="9.6" direction="N"/>
 		<exit to="Cairo" weight="62" danger="85" difficult="9.6" direction="WS"/>
 		
-		<item name="Rom" type="gmit.computing.things.Consumable" stenght="40" />
-		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="Rom" type="gmit.computing.things.Consumable" strength="40" />
+		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
 		
-		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99">
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="70" strength="30">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Scimitar" type="gmit.computing.things.Items" stenght="60"/>
+			<item name="Scimitar" type="gmit.computing.things.Items" strength="60"/>
 		</game-character> 
 	</location>
 </network>
