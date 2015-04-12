@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<network>
+	<location id="1" name="Antioch">
+		<description><![CDATA[Well come to the Antioch, it is
+			one of the crusader states created during the First Crusade
+			which included parts of modern-day Turkey and Syria.
+			you see next exits to: ]]>
+		</description>
+			
+		<exit to="Cyprus" weight="78" danger="55" difficult="9.6" direction="WS"/>
+		<exit to="Alepo" weight="23" danger="10" difficult="9.6" direction="E"/>
+		<exit to="Damascus" weight="71" danger="45" difficult="9.6" direction="S"/>
+		
+		<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="99" />	
+		<item name="beer" type="gmit.computing.things.Consumable" stenght="15" />
+
+		<game-character name="Neutral people" descriptiontype="We are just normal people who want's only Peace in the world" type="gmit.computing.people.NeutralCharacters" health="100">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="60" />
+		</game-character>
+		
+		<game-character name="Deadly Templar Knight" descriptiontype="We are Warriors and we are ready to kill every Enemy in this territory" type="gmit.computing.people.FriendlyCharacters" health="70">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Long Sword" type="gmit.computing.things.Items" stenght="35"/>
+		</game-character>
+	</location>
+	
+	<location id="2" name="Cyprus">
+		<description><![CDATA[Wellcome to The Kingdom of Cyprus, it was a Crusader kingdom 
+			on the island of Cyprus in the high and late Middle Ages, between 1192 and 1489. 
+			It was ruled by the French House of Lusignan. 
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="Antioch" weight="78" danger="55" difficult="9.6" direction="NE"/>
+		<exit to="PiratBuhtA" weight="27" danger="85" difficult="9.6" direction="E"/>
+		
+		<item name="Long Sword" type="gmit.computing.things.Weapon" stenght="35" />
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		
+		<game-character name="Neutral people" type="gmit.computing.people.NeutralCharacters" health="100">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="15" />
+		</game-character>
+		
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" stenght="99" health="99">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Scimitar" type="gmit.computing.things.Items" stenght="60"/>
+		</game-character> 
+	</location>
+	
+	<location id="3" name="Edessa">
+		<description><![CDATA[Wellcome to Edessa,
+			this town became the centre of intellectual life within the Syriac Orthodox Church. 
+			As such it also became the centre for the translation of Ancient Greek philosophy into Syriac.
+			When the Crusades arrived, it was still important enough to tempt a side-expedition after the Siege of Antioch.
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="Alepo" weight="28" danger="10" difficult="9.6" direction="WS"/>
+		<exit to="Mosul" weight="37" danger="13" difficult="9.6" direction="E"/>
+		
+		<item name="Mace" type="gmit.computing.things.Weapon" stenght="45" />
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		
+		<game-character name="Neutral people" type="gmit.computing.people.NeutralCharacters" health="100">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="15" />
+		</game-character>
+	</location>
+	
+	<location id="4" name="Alepo">
+		<description><![CDATA[Wellcome to the Aleppo,
+			In 1128 Aleppo became capital of the expanding Zengid dynasty, which ultimately conquered Damascus in 1154. 
+			In 1183 Aleppo came under the control of Saladin and then the Ayyubid Dynasty.
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="Antioch" weight="23" danger="10" difficult="9.6" direction="W"/>
+		<exit to="Edessa" weight="28" danger="10" difficult="9.6" direction="NE"/>
+		<exit to="Damascus" weight="64" danger="40" difficult="9.6" direction="S"/>
+		
+		<item name="Crossbow" type="gmit.computing.things.Weapon" stenght="50" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		
+		<game-character name="Neutral people" type="gmit.computing.people.NeutralCharacters" health="100">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="15" />
+		</game-character>
+		
+		<game-character name="Deadly Templar Knight" type="gmit.computing.people.FriendlyCharacters" health="100">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Long Sword" type="gmit.computing.things.Items" stenght="35"/>
+		</game-character>
+	</location>
+	
+	<location id="5" name="Mosul">
+		<description><![CDATA[Wellcome to Mosul,
+			Mosul later succeeded Nineveh as the Tigris bridgehead of the road that linked Syria
+			and Anatolia with the Median Empire 
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="Edessa" weight="37" danger="13" difficult="9.6" direction="W"/>
+		<exit to="Damascus" weight="74" danger="67" difficult="9.6" direction="WS"/>
+		
+		<item name="Halberd" type="gmit.computing.things.Weapon" stenght="75" />
+		<item name="Henessy" type="gmit.computing.things.Consumable" stenght="20" />
+	</location>
+	
+	<location id="6" name="Damascus">
+		<description><![CDATA[Wellcome to Damascus,
+			is the capital and the second largest city of Syria after Aleppo. 
+			Saladin was controlling this town, befor Templar knight has arrived to Jerusalem for war
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="Antioch" weight="71" danger="45" difficult="9.6" direction="N"/>
+		<exit to="Alepo" weight="64" danger="40" difficult="9.6" direction="N"/>
+		<exit to="Tiberias" weight="20" danger="36" difficult="9.6" direction="WS"/>
+		<exit to="Mosul" weight="74" danger="67" difficult="9.6" direction="NE"/>
+		
+		<item name="Henessy" type="gmit.computing.things.Consumable" stenght="20" />
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		<item name="Scimitar" type="gmit.computing.things.Consumable" stenght="60" />
+		
+	</location>
+	
+	<location id="7" name="Tiberias">
+		<description><![CDATA[Well come to the Tiberias, 
+			During the First Crusade Tiberias was occupied by the Franks soon after the capture of Jerusalem. 
+			The city was given in fief to Tancred, who made it his capital of the Principality of Galilee 
+			in the Kingdom of Jerusalem;
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="Damascus" weight="20" danger="36" difficult="9.6" direction="NE"/>
+		<exit to="Acre" weight="15" danger="41" difficult="9.6" direction="S"/>
+		
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="bow" type="gmit.computing.things.Weapon" stenght="55" />
+		<item name="Dragon Fire" type="gmit.computing.things.Weapon" stenght="85" />
+		
+		<game-character name="Deadly Templar Knight" type="gmit.computing.people.FriendlyCharacters" health="100">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Long Sword" type="gmit.computing.things.Items" stenght="35"/>
+		</game-character>
+	</location>
+	
+	<location id="8" name="Acre">
+		<description><![CDATA[Well come to the Acre, 
+			After roughly four years of siege, 
+			Acre finally capitulated to the forces of King Baldwin I of Jerusalem in 1104 during the First Crusade. 
+			The Crusaders made the town their chief port in Palestine.
+			On the first Crusade, Fulcher relates his travels with the Crusading armies of King Baldwin, 
+			including initially staying over in Acre before the army’s advance to Jerusalem.
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="Tiberias" weight="15" danger="41" difficult="9.6" direction="N"/>
+		<exit to="Haifa" weight="18" danger="37" difficult="9.6" direction="S"/>
+	
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		
+		<game-character name="Deadly Templar Knight" type="gmit.computing.people.FriendlyCharacters" health="100">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Long Sword" type="gmit.computing.things.Items" stenght="35"/>
+		</game-character>
+	</location>
+	
+	<location id="9" name="Haifa">
+		<description><![CDATA[Well come to the Haifa, 
+			Prosperity ended in 1100, when Haifa was besieged and blockaded by the Crusaders 
+			and then conquered after a fierce battle with its Jewish and Muslim inhabitants.
+			Under the Crusaders, Haifa was reduced to a small fishing and agricultural village.
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="Acre" weight="18" danger="37" difficult="9.6" direction="N"/>
+		<exit to="Jerusalem" weight="24" danger="87" difficult="9.6" direction="SE"/>
+		
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+	</location>
+	
+	<location id="10" name="Jerusalem">
+		<description><![CDATA[Well come to the Jerusalem, 
+			The Latin Kingdom of Jerusalem was a crusader state established in the Southern Levant in 1099 after the First Crusade. 
+			The kingdom lasted nearly two hundred years, from 1099 until 1291 when the last remaining possession, 
+			Acre, was destroyed by the Mamluks, but its history is divided into two distinct periods. 
+			The first kingdom lasted from 1099 to 1187, when it was almost entirely overrun by Saladin. After the subsequent Third Crusade, the kingdom was re-established in Acre in 1192, 
+			and lasted until that city's destruction in 1291. This second kingdom is sometimes called the Kingdom of Acre.
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="Haifa" weight="24" danger="87" difficult="9.6" direction="NW"/>
+		<exit to="Cairo" weight="69" danger="79" difficult="9.6" direction="W"/>
+		
+		<item name="Holy Grail" type="gmit.computing.things.QuestItem" stenght="20"/>	
+		
+		<item name="Henessy" type="gmit.computing.things.Consumable" stenght="20" />
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
+		
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="100">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Scimitar" type="gmit.computing.things.Items" stenght="60"/>
+		</game-character> 
+	</location>
+	
+	<location id="11" name="Cairo">
+		<description><![CDATA[Wellcome to the Cairo, 
+			In 1169 Saladin was appointed as the new vizier of Egypt by the Fatimids and 
+			two years later he would seize power from the family of the last Fatimid caliph.
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="PiratBuhtB" weight="62" danger="85" difficult="9.6" direction="NE"/>
+		<exit to="Jerusalem" weight="69" danger="79" difficult="9.6" direction="E"/>
+		
+		<item name="Flower of Peace" type="gmit.computing.things.Weapon" stenght="100" />
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+	</location>
+	
+	<location id="12" name="PiratBuhtA">
+		<description><![CDATA[Well come to the PiratBuhtA, 
+			Very scary pirates, founded two main bays, which were moored fleets of merchant ships, 
+			right in the black sea near Cyprus. Convey of Templar Knight which went to King Of Jerusalem for war, 
+			was sime time costs their lifes.
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="PiratBuhtB" weight="47" danger="85" difficult="9.6" direction="S"/>
+		<exit to="Cyprus" weight="27" danger="85" difficult="9.6" direction="E"/>
+		
+		<item name="Rom" type="gmit.computing.things.Consumable" stenght="40" />
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+	</location>
+	
+	<location id="13" name="PiratBuhtB">
+		<description><![CDATA[Well come to the PiratBuhtB, 
+			Very scary pirates, founded two main bays, This is a second one all merchant ships were moored fleets, 
+			right in the black sea near Cyprus. Convey of Templar Knight which went to King Of Jerusalem for war, 
+			was sime time costs their lifes.
+			you see next exits to: ]]>
+		</description>
+		
+		<exit to="PiratBuhtA" weight="47" danger="85" difficult="9.6" direction="N"/>
+		<exit to="Cairo" weight="62" danger="85" difficult="9.6" direction="WS"/>
+		
+		<item name="Rom" type="gmit.computing.things.Consumable" stenght="40" />
+		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
+		
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="100">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Scimitar" type="gmit.computing.things.Items" stenght="60"/>
+		</game-character> 
+	</location>
+</network>

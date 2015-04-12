@@ -1,0 +1,42 @@
+FUNCTION_BLOCK risks
+
+	VAR_INPUT 
+		weapon : REAL; 
+		enemy : REAL;
+	END_VAR
+	
+	VAR_OUTPUT 
+		victory : REAL;
+	END_VAR
+	
+	FUZZIFY weapon
+		TERM weak := trian 0 25 50; 
+		TERM normal := trian 25 50 75;
+		TERM strong := trian 50 75 100;
+	END_FUZZIFY
+		
+	FUZZIFY enemy
+		TERM weak := trian 0 25 50; 
+		TERM normal := trian 25 50 75;
+		TERM strong := trian 50 75 100;
+	END_FUZZIFY
+		
+	DEFUZZIFY victory
+		TERM low := trian 0 25 50; 
+		TERM normal := trian 25 50 75;
+		TERM hight := trian 50 75 100; 
+		METHOD : COG;
+		DEFAULT := 0;
+	END_DEFUZZIFY
+		
+	RULEBLOCK No1
+		AND : MIN; //min for and
+		ACT : MIN; //
+		ACCU : MAX;
+		RULE 1 : IF weapon IS strong AND enemy IS weak THEN victory IS hight;
+		RULE 2 : IF weapon IS weak AND enemy IS strong THEN victory IS low; 
+		RULE 3 : IF weapon IS weak AND enemy IS weak THEN victory IS normal;
+		RULE 4 : IF weapon IS strong AND enemy IS strong THEN victory IS normal;
+	END_RULEBLOCK
+
+END_FUNCTION_BLOCK	
