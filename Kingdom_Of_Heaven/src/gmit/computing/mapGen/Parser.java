@@ -64,14 +64,14 @@ public class Parser extends DefaultHandler{
 	
 	//Called by SAX when it reaches the starting root element <game-graph>
 	public void startDocument() throws SAXException {
-		System.out.println("At start of document...");
-		System.out.println("______________________________________________________");
+		//System.out.println("At start of document...");
+		//System.out.println("______________________________________________________");
 	}
 	
 	//Called by SAX when it reaches the closing root element </game-graph>
 	public void endDocument(){
-		System.out.println("At end of document...");
-		System.out.println("______________________________________________________");
+		//System.out.println("At end of document...");
+		//System.out.println("______________________________________________________");
 	}
 	
 
@@ -85,7 +85,7 @@ public class Parser extends DefaultHandler{
 			
 			String locationDesc = new String(ch, start, length);
 			loc.setDescriprion(new String(ch, start, length));
-			System.out.println(locationDesc);
+			//System.out.println(locationDesc);
 			description = false;			
 		}else if (item){
 			
@@ -108,8 +108,8 @@ public class Parser extends DefaultHandler{
 	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException {
 		if (qName.equalsIgnoreCase("location")){
 				locations = true;
-				System.out.println("Found Location");
-				System.out.println("-----------------------");
+				//System.out.println("Found Location");
+				//System.out.println("-----------------------");
 				try {
 				//Read in the values for the attributes of the element <location>
 					int locationID = Integer.parseInt(atts.getValue("id"));
@@ -119,7 +119,7 @@ public class Parser extends DefaultHandler{
 					loc = (Location) Class.forName("gmit.computing.mapGen.Location").newInstance();
 					loc.setId(locationID); //Now configure the Location object with an ID, Name, Description etc...
 					loc.setName(locationName);
-					System.out.println(locationName);		
+					//System.out.println(locationName);		
 					
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -138,7 +138,7 @@ public class Parser extends DefaultHandler{
 				ex.setName(nLoc);
 				ex.getExits().add(loc);
 				ex.addLocation(loc);
-				System.out.println("   :   " + nLoc + " -> " + wLoc);
+				//System.out.println("   :   " + nLoc + " -> " + wLoc);
 			}catch (Exception e){
 				e.printStackTrace();
 			}
@@ -154,7 +154,7 @@ public class Parser extends DefaultHandler{
 				it.setType(itemType);
 				it.setName(itemName);
 				it.setStrennght(itemStrenght);
-				System.out.println("items : " + itemName + " ster " + itemStrenght);
+				//System.out.println("items : " + itemName + " ster " + itemStrenght);
 				//require a switch statement, 
 				//because we have 2 different types of items in XML file
 				switch (itemType) {
@@ -230,8 +230,8 @@ public class Parser extends DefaultHandler{
 				
 				observers.setDescriptionChar(charDesc);
 				observers.setCharacterLocation(loc);
-				System.out.println("character in this location : " + charName);
-				System.out.println("description " + charDesc);
+			//	System.out.println("character in this location : " + charName);
+				//System.out.println("description " + charDesc);
 				loc.getObservers().add(observers);
 				/*switch (charType) {
 				case "gmit.computing.people.MyHero":
@@ -282,7 +282,7 @@ public class Parser extends DefaultHandler{
 		if (qName.equals("location")){
 			locations = false;
 			locs.add(loc);
-			System.out.println("End of location...\n");		
+			//System.out.println("End of location...\n");		
 		}else if (qName.equals("exit")){
 			exit = false;
 		}else if (qName.equals("description")){
@@ -291,7 +291,7 @@ public class Parser extends DefaultHandler{
 			item = false;
 			
 			if(gameCharacter){
-				System.out.println(observers.getName());
+				//System.out.println(observers.getName());
 				observers.getItems().add(it);
 			}else{
 				loc.getItems().add(it);

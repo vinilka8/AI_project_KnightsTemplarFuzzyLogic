@@ -70,7 +70,6 @@ public class Runner extends Applet{
 				myHero.setLocation(loc);
 				System.out.println("Your hero start in : \t" + myHero.getLocation().getName());
 				System.out.println("About town :\t\t" + myHero.getLocation().getDescription());
-				//System.out.println("Items are in : " + myHero.getLocation().getName());
 				break;	
 			}
 		}
@@ -86,7 +85,6 @@ public class Runner extends Applet{
 		for(GameCharacter gc : myHero.getLocation().getObservers())
 		{
 			System.out.println("\t\t\t" + gc.getName());
-			System.out.println("" + gc.getDescriptionChar());
 		}
 		System.out.println("--------------------");
 		

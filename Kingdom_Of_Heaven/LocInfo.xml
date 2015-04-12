@@ -11,7 +11,7 @@
 		<exit to="Alepo" weight="23" danger="10" difficult="9.6" direction="E"/>
 		<exit to="Damascus" weight="71" danger="45" difficult="9.6" direction="S"/>
 		
-		<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="99" />	
+		<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="15" />	
 		<item name="beer" type="gmit.computing.things.Consumable" stenght="15" />
 
 		<game-character name="Neutral people" descriptiontype="We are just normal people who want's only Peace in the world" type="gmit.computing.people.NeutralCharacters" health="100">
@@ -44,7 +44,7 @@
 			<item name="Short Sword" type="gmit.computing.things.Weapon" stenght="15" />
 		</game-character>
 		
-		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" stenght="99" health="99">
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
 			<item name="Scimitar" type="gmit.computing.things.Items" stenght="60"/>
 		</game-character> 
@@ -205,7 +205,7 @@
 		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
 		<item name="Pint of Beer" type="gmit.computing.things.Consumable" stenght="15" />
 		
-		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="100">
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
 			<item name="Scimitar" type="gmit.computing.things.Items" stenght="60"/>
 		</game-character> 
@@ -254,7 +254,7 @@
 		<item name="Rom" type="gmit.computing.things.Consumable" stenght="40" />
 		<item name="Water" type="gmit.computing.things.Consumable" stenght="30" />
 		
-		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="100">
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
 			<item name="Scimitar" type="gmit.computing.things.Items" stenght="60"/>
 		</game-character> 

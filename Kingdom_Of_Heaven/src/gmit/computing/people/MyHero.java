@@ -212,19 +212,16 @@ public class MyHero implements GameCharacter {
 		fis.setVariable("enemy", ec.getHealth());// ec.getStrength()
 		fis.evaluate();
 		float victory = (float) fis.getVariable("victory").getValue();
-		// this.lifeForce = this.lifeForce () * victory;
-		// ec.lifeForce = (float) (ec.lifeForce - victory);
 		System.out.println(victory + "----- VICTORY !!! ----- ");
-		System.out.println(weapon.getStrennght() + " mbmjghmhvjk");
-		System.out.println(ec.getHealth());
 		
-		System.out.println(" enemy healt " + ec.getHealth());
+		System.out.println("Enemy Health " + ec.getHealth() +"HP");
 		ec.setHealth((ec.getHealth() - victory));// or Health is public
 		if (ec.getHealth() < 0) {
 
 			location.getObservers().remove(ec);
 		}
-		System.out.println("Lift left" + ec.getHealth());
+		System.out.println("You hit Enemy with " + weapon.getStrennght());
+		System.out.println("New Enemy health " + ec.getHealth());
 	
 		
 	}
@@ -412,7 +409,6 @@ public class MyHero implements GameCharacter {
 				System.out.println("Choose weapon : ");
 				String weapon = InputClass.getInput();
 				Weapon w = (Weapon) useWeapon(weapon);
-				System.out.println("sdsfd" + w.getStrennght());
 				fight(w, ec);
 			} else {
 				System.out.println(" you can't fight your Friend and Neutral army ");
