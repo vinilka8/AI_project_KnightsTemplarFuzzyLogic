@@ -1,0 +1,42 @@
+FUNCTION_BLOCK food
+	VAR_INPUT 
+		food : REAL;
+		health : REAL; 
+	END_VAR
+	
+	VAR_OUTPUT 
+		testing : REAL;
+	END_VAR
+	
+	FUZZIFY food
+		TERM bad := trian 0 25 50; 
+		TERM normal := trian 25 50 75;
+		TERM good := trian 50 75 100;
+	END_FUZZIFY
+		
+	FUZZIFY health
+		TERM bad := trian 0 25 50; 
+		TERM normal := trian 25 50 75;
+		TERM good := trian 50 75 100;
+	END_FUZZIFnormalY
+		
+	DEFUZZIFY testing
+		TERM badteist := trian 0 25 50; 
+		TERM normalteist := trian 25 50 75;
+		TERM delisious := trian 50 75 100; 
+		METHOD : COG;
+		DEFAULT := 0;
+	END_DEFUZZIFY
+		
+	RULEBLOCK No1
+		AND : MIN;
+		ACT : MIN;
+		ACCU : MAX;
+		RULE 1 : IF food IS bad AND health IS bad THEN testing IS delisious;
+		RULE 2 : IF food IS normal AND health IS normal THEN testing IS normalteist; 
+		RULE 3 : IF food IS good AND health IS good THEN testing IS badteist;
+		RULE 4 : IF food IS bad AND health IS good THEN victory IS badteist;
+		RULE 5 : IF food IS good AND health IS bad THEN victory IS delisious;
+	END_RULEBLOCK
+
+END_FUNCTION_BLOCK	

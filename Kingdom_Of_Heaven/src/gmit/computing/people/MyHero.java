@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import net.sourceforge.jFuzzyLogic.FIS;
+import net.sourceforge.jFuzzyLogic.plot.JFuzzyChart;
 
 //MOVE need to fix
 //USE need to fix
@@ -37,6 +38,7 @@ public class MyHero implements GameCharacter {
 	public MyHero() {
 		super();
 		loadFuzzyFile();
+		//loadFuzzyFileFood();
 	}
 
 	FIS fis;
@@ -50,6 +52,16 @@ public class MyHero implements GameCharacter {
 			return;
 		}
 	}
+	
+	/*public void loadFuzzyFileFood(){
+		String fileName = "conf/foodRules.fcl";// contains all fuzzy sets
+		fis = FIS.load(fileName, true); // Load and parse the FCL
+		// Error while loading?
+		if (fis == null) {
+			System.err.println("Can't load file: '" + fileName + "'");
+			return;
+		}
+	}*/
 
 	public String getName() {
 		return name;
@@ -100,7 +112,16 @@ public class MyHero implements GameCharacter {
 	@Override
 	public void eat(String itemsos) {
 		// TODO Auto-generated method stub
+		
+		
+		
 		for (Items u : items) {
+//			fis.setVariable("food", u.getStrennght());// weapon.getDamage()
+//			fis.setVariable("health", hp);// ec.getStrength()
+//			fis.evaluate();
+//			JFuzzyChart.get().chart(fis);	
+//			float testing = (float) fis.getVariable("testing").getValue();
+			
 			if (u.getName().equalsIgnoreCase(itemsos)) {
 				if (hp < 100) {
 					if(u.getClass() == Consumable.class){
@@ -114,6 +135,7 @@ public class MyHero implements GameCharacter {
 								+ " : and it gives you : " + u.getStrennght()
 								+ " HP" + "\nYour health now is : " + hp
 								+ " HP");
+						//System.out.println(testing + "----- nice !!! ----- ");
 					
 					} else {
 						System.out.println("Wrong item to use");
@@ -212,6 +234,9 @@ public class MyHero implements GameCharacter {
 		fis.setVariable("weapon", weapon.getStrennght());// weapon.getDamage()
 		fis.setVariable("enemy", ec.getHealth());// ec.getStrength()
 		fis.evaluate();
+		JFuzzyChart.get().chart(fis);	
+
+
 		float victory = (float) fis.getVariable("victory").getValue();
 		System.out.println("Enemy Health " + ec.getHealth() +" HP");
 		while(ec.getHealth() > 0) {
@@ -384,11 +409,21 @@ public class MyHero implements GameCharacter {
 		case "tell":
 			System.out.println("Choose to who you want to tell");
 			String cho = InputClass.getInput();
-			FriendlyCharacters fc = location.getFriend(cho);
-			System.out.println("what would you like to ask me?");// few out put
-			System.out.println("Power, Healt, About");// choose out put
-			String what = InputClass.getInput();
-			tell(what, fc);
+			FriendlyCharacters fc = location.getFriend(cho); 
+			if (fc != null) {
+				try{
+					System.out.println("what would you like to ask me?");// few out put
+					System.out.println("Power, Healt, About");// choose out put
+					String what = InputClass.getInput();
+					tell(what, fc);
+				}catch (Exception e) {
+					System.out.println("Write a correct name");
+					e.printStackTrace();
+				}
+			}else{
+				System.out.println("No such name of friend in this location");
+				System.out.println("Please write a correct name");
+			}
 			break;
 		case "drop":
 			System.out.println("select item");
@@ -416,7 +451,6 @@ public class MyHero implements GameCharacter {
 					System.out.println("please write correct weapon");
 					e.printStackTrace();
 				}
-				
 			} else {
 				System.out.println(" you can't fight your Friend and Neutral army ");
 			}

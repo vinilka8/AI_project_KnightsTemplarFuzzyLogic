@@ -11,10 +11,9 @@
 		<exit to="Alepo" weight="23" danger="10" difficult="9.6" direction="E"/>
 		<exit to="Damascus" weight="71" danger="45" difficult="9.6" direction="S"/>
 		
-				
-		<item name="Holy Grail" type="gmit.computing.things.QuestItem" strength="20"/>	
 		<item name="Short Sword" type="gmit.computing.things.Weapon" strength="15" />	
 		<item name="beer" type="gmit.computing.things.Consumable" strength="15" />
+		<item name="Scim" type="gmit.computing.things.Weapon" strength="100" />
 
 		<game-character name="Neutral people" descriptiontype="We are just normal people who want's only Peace in the world" type="gmit.computing.people.NeutralCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
@@ -47,7 +46,7 @@
 		
 		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99" strength="20">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Scimitar" type="gmit.computing.things.Items" strength="60"/>
+			<item name="Scimitar" type="gmit.computing.things.Weapon" strength="60"/>
 		</game-character> 
 	</location>
 	
@@ -93,7 +92,7 @@
 		
 		<game-character name="Deadly Templar Knight" type="gmit.computing.people.FriendlyCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Long Sword" type="gmit.computing.things.Items" strength="35"/>
+			<item name="Long Sword" type="gmit.computing.things.Weapon" strength="35"/>
 		</game-character>
 	</location>
 	
@@ -126,7 +125,12 @@
 		<item name="Henessy" type="gmit.computing.things.Consumable" strength="20" />
 		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
 		<item name="Pint of Beer" type="gmit.computing.things.Consumable" strength="15" />
-		<item name="Scimitar" type="gmit.computing.things.Consumable" strength="60" />
+		<item name="Scimitar" type="gmit.computing.things.Weapon" strength="60" />
+		
+		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99">
+			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
+			<item name="Scimitar" type="gmit.computing.things.Weapon" strength="60"/>
+		</game-character> 
 		
 	</location>
 	
@@ -147,7 +151,7 @@
 		
 		<game-character name="Deadly Templar Knight" type="gmit.computing.people.FriendlyCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Long Sword" type="gmit.computing.things.Items" strength="35"/>
+			<item name="Long Sword" type="gmit.computing.things.Weapon" strength="35"/>
 		</game-character>
 	</location>
 	
@@ -168,7 +172,7 @@
 		
 		<game-character name="Deadly Templar Knight" type="gmit.computing.people.FriendlyCharacters" health="100">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Long Sword" type="gmit.computing.things.Items" strength="35"/>
+			<item name="Long Sword" type="gmit.computing.things.Weapon" strength="35"/>
 		</game-character>
 	</location>
 	
@@ -200,6 +204,7 @@
 		<exit to="Haifa" weight="24" danger="87" difficult="9.6" direction="NW"/>
 		<exit to="Cairo" weight="69" danger="79" difficult="9.6" direction="W"/>
 
+		<item name="Holy Grail" type="gmit.computing.things.QuestItem" strength="20"/>
 		
 		<item name="Henessy" type="gmit.computing.things.Consumable" strength="20" />
 		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
@@ -207,7 +212,7 @@
 		
 		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="99">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Scimitar" type="gmit.computing.things.Items" strength="60"/>
+			<item name="Scimitar" type="gmit.computing.things.Weapon" strength="60"/>
 		</game-character> 
 	</location>
 	
@@ -221,7 +226,7 @@
 		<exit to="PiratBuhtB" weight="62" danger="85" difficult="9.6" direction="NE"/>
 		<exit to="Jerusalem" weight="69" danger="79" difficult="9.6" direction="E"/>
 		
-		<item name="Flower of Peace" type="gmit.computing.things.Weapon" strength="100" />
+		<item name="Fire" type="gmit.computing.things.Weapon" strength="100" />
 		<item name="Water" type="gmit.computing.things.Consumable" strength="30" />
 	</location>
 	
@@ -241,7 +246,7 @@
 		
 		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="70" strength="30">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Scimitar" type="gmit.computing.things.Items" strength="60"/>
+			<item name="Scimitar" type="gmit.computing.things.Weapon" strength="60"/>
 		</game-character> 
 	</location>
 	
@@ -261,7 +266,7 @@
 		
 		<game-character name="Saracen" type="gmit.computing.people.EnemyCharacters" health="70" strength="30">
 			<search-algorithm name="gmit.RandomHotPotato" beamWidth="3" />
-			<item name="Scimitar" type="gmit.computing.things.Items" strength="60"/>
+			<item name="Scimitar" type="gmit.computing.things.Weapon" strength="60"/>
 		</game-character> 
 	</location>
 </network>
