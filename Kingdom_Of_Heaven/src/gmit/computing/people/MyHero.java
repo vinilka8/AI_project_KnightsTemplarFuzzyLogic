@@ -297,6 +297,29 @@ public class MyHero implements GameCharacter {
 			System.out.println("no location ther, just empty fields with sand");
 		}
 	}
+	
+
+	private void go(String direction) {
+		// TODO Auto-generated method stub
+		direction = direction.toUpperCase();
+		Location l = location;
+		for (Entry<Location, String> entry : location.getChildren().entrySet()) {			
+			String dir = entry.getValue();
+			Location loc = entry.getKey();
+			
+			if (dir.equalsIgnoreCase(direction)) {
+				location = GameMap.getLocation(loc);
+				System.out.println("Your HERO arived into :\t"
+						+ location.getName());
+				System.out.println("About this town :\t"
+						+ location.getDescription());
+				System.out.println("Characters in this location :\t");
+			}
+		}
+		if (l.equals(location)) {
+			System.out.println("no location ther, just empty fields with sand");
+		}
+	}
 
 	private void win() {
 		// TODO Auto-generated method stub
@@ -339,7 +362,7 @@ public class MyHero implements GameCharacter {
 		//do{what != "no"
 		//boolean loop = true;
 		//while(loop){
-			switch (what) {
+		switch (what) {
 			case "power":
 				System.out.println("What is you power?");
 				System.out.println("------------------");
@@ -365,6 +388,12 @@ public class MyHero implements GameCharacter {
 				System.out.println("------------------------");
 				System.out.println(fc.getDescriptionChar());
 				break;
+			case "go":
+				System.out.println("I want you to move to location");
+				System.out.println("Please tell me where i have to go my milord");
+				String g = InputClass.getCommand().toUpperCase();
+				System.out.println("Please move to " + location.getName());
+				go(g);//direction
 			}
 			//what = InputClass.getInput();
 			
